@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/create.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>New Activity</title>
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark" >
+    <a class="navbar-brand" href="">Dojo Activity Center</a>
+    <form  class="form-inline">
+        <a href="/dashboard" class="btn btn-outline-success my-2 my-sm-0">Dashboard</a>
+        <a href="/logout" class="btn btn-outline-success my-2 my-sm-0">logout</a> 
+    </form>
+    </nav>
+    <div id="container" >
+        @model activityViewModel
+        <h1>Create an Activity!</h1>
+        <form asp-action="Create" method="POST">
+            <span asp-validation-for="name" style="color:red"></span> 
+            <label asp-for="name">Title:</label>
+            <input type="text" asp-for="name">
+
+            <span asp-validation-for="date" style="color:red"></span> 
+            <label asp-for="date">Date:</label>
+            <input type="date" asp-for="date">
+
+            <span asp-validation-for="Time" style="color:red"></span> 
+            <label asp-for="Time">Time:</label>
+            <input type="time" asp-for="Time">
+
+            <span asp-validation-for="duration" style="color:red"></span> 
+            <label asp-for="duration">Duration:</label>
+            <input type="text" asp-for="duration">
+
+            <span asp-validation-for="timetype" style="color:red"></span> 
+            <label asp-for="timetype">Title:</label>
+            <select name="timetype">
+                <option value="Hours">Hours</option>
+                <option value="Minutes">Minutes</option>
+                <option value="Days">Days</option>
+            </select>
+            <span asp-validation-for="description" style="color:red"></span> 
+            <label asp-for="description">Description</label>
+            <textarea name="description" cols="30" rows="10"></textarea>
+            <button type="submit" class="btn btn-primary">Create Activity</button>
+        </form>
+    
+    </div>
+</body>
+</html>

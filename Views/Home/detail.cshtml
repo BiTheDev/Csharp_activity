@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/detail.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Activity</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark" >
+        <span class="navbar-brand">Dojo Activity Center</span>
+        <form  class="form-inline">
+            <a href="/dashboard" class="btn btn-outline-success my-2 my-sm-0">Dashboard</a>
+            <a href="/logout" class="btn btn-outline-success my-2 my-sm-0">logout</a> 
+        </form>
+    </nav> 
+        <h2>@ViewBag.activitydetail.name</h2>
+        <h3>Event Coordinator: @ViewBag.activitydetail.coordinator</h3>
+        <h3>Description</h3>
+        <p>@ViewBag.activitydetail.description</p>
+        <h3>Paticipants</h3>
+        @foreach(var guests in @ViewBag.activitydetail.activityparticpants){
+            <p>@guests.user.first_name</p>
+        }
+
+    @if(@ViewBag.activitydetail.usersid == @ViewBag.user.id){
+        <form action="/delete" method="POST">
+            <input type="hidden" name="activityid" value = @ViewBag.activitydetail.id>
+            <button type="submit">Delete</button>
+        </form>
+        }else{
+            bool InList = false;
+            foreach(var guest in @ViewBag.activitydetail.activityparticpants){
+                if(@guest.usersid== @ViewBag.user.id){
+                    InList = true;
+                    <td> 
+                        <form action="/leave" method="POST">
+                            <input type="hidden" name="activityid" value = @ViewBag.activitydetail.id>
+                            <button type="submit">leave</button>
+                        </form>
+                    </td>
+                }
+            }
+            @if(InList == false){
+                <td> 
+                    <form action="/join" method="POST">
+                        <input type="hidden" name="activityid" value = @ViewBag.activitydetail.id>
+                        <button type="submit">join</button>
+                    </form>
+                </td>
+            }
+    }  
+</body>
+</html>

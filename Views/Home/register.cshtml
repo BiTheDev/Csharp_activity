@@ -1,0 +1,29 @@
+<div id="register">
+    <h1>Register</h1>
+    @model RegisterViewModel
+    <form asp-action="Register" asp-controller="Home" method="POST">
+    <span asp-validation-for="first_name" style="color:red; display:block;"></span> 
+    <label asp-for="first_name">First Name: </label> 
+    <input class="form-control" type="text" asp-for="first_name">
+
+    <span asp-validation-for="last_name" style="color:red; display:block;"></span> 
+    <label asp-for="last_name">Last Name: </label> 
+    <input class="form-control" type="text" asp-for="last_name">
+
+    <span asp-validation-for="register_email" style="color:red; display:block;"></span> 
+    <label asp-for="register_email">Email:</label> 
+    <input class="form-control" type="text" asp-for="register_email">
+
+    <span asp-validation-for="register_password" style="color:red; display:block;"></span> 
+    <label asp-for="register_password">Password: </label> 
+    <input class="form-control" type="password" asp-for="register_password">
+
+    <span asp-validation-for="confirm" style="color:red; display:block;"></span> 
+    <label asp-for="confirm">Confirm Password: </label> 
+    <input class="form-control" type="password" asp-for="confirm">
+    <br>
+    <button type="submit" class="btn btn-warning">register</button>
+</form>
+</div>
+
+    

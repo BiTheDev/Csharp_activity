@@ -1,0 +1,8 @@
+#container{
+    width:80%;
+    margin-left:10% !important;
+}
+
+span, label,input,button{
+    display:block;
+}

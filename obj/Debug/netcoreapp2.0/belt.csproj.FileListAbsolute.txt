@@ -1,0 +1,11 @@
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/bin/Debug/netcoreapp2.0/belt.deps.json
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/bin/Debug/netcoreapp2.0/belt.runtimeconfig.json
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/bin/Debug/netcoreapp2.0/belt.runtimeconfig.dev.json
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/bin/Debug/netcoreapp2.0/belt.dll
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/bin/Debug/netcoreapp2.0/belt.pdb
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/obj/Debug/netcoreapp2.0/belt.csprojResolveAssemblyReference.cache
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/obj/Debug/netcoreapp2.0/belt.csproj.CoreCompileInputs.cache
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/obj/Debug/netcoreapp2.0/belt.AssemblyInfoInputs.cache
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/obj/Debug/netcoreapp2.0/belt.AssemblyInfo.cs
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/obj/Debug/netcoreapp2.0/belt.dll
+/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/obj/Debug/netcoreapp2.0/belt.pdb

@@ -1,0 +1,16 @@
+<div id="login">
+    <h1>Login</h1>
+    @model LoginViewModel
+    <form asp-action="Login" asp-controller="Home" method="POST">
+    <span style="color:red; display:block;">@ViewBag.error</span>
+    <span asp-validation-for="login_Email" style="color:red; display:block;"></span> 
+    <label asp-for="login_Email">Email:</label> 
+    <input class="form-control" type="text" asp-for="login_Email">
+
+    <span asp-validation-for="login_Password" style="color:red; display:block;"></span> 
+    <label asp-for="login_Password">Password: </label> 
+    <input class="form-control" type="password" asp-for="login_Password">
+
+    <button type="submit" class="btn btn-warning">login</button>
+    </form>
+</div>

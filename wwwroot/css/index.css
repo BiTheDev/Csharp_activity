@@ -1,0 +1,42 @@
+body{
+    background-color:rgb(195, 247, 249) !important;
+}
+#container {
+    margin-top:2%;
+    width:80%;
+    margin-left:10%;
+    padding-top:20px;
+    border: ridge 2px navy !important;
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+}
+
+h1{
+    color:rgb(10, 250, 50) !important;
+    font-size:35px;
+    text-shadow: 1px 2px black;
+}
+
+
+
+#register{
+    display:inline-block !important;
+    width:40% !important;
+}
+
+#login{
+    vertical-align: top;
+    display:inline-block !important;
+    width:40% !important;
+    margin-left:15% !important;
+}
+
+input{
+    width:100%;
+}
+
+.btn-warning{
+    width:30%;
+    margin-left:35%;
+    margin-top:2%;
+}
