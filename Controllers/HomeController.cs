@@ -21,7 +21,7 @@ namespace belt.Controllers
             }
             public IActionResult Index()
             {
-                return View("index");
+                return View("Index");
             }
             [HttpPost("RegisterProcess")]
             public IActionResult Register(RegisterViewModel user){
@@ -30,7 +30,7 @@ namespace belt.Controllers
                         if(userList != null){
                             if(user.register_email == userList.email){
                                 ModelState.AddModelError("register_email", "email exists");
-                                return View("index");
+                                return View("Index");
                             }
                         }                                     
                     PasswordHasher<RegisterViewModel> Hasher = new PasswordHasher<RegisterViewModel>();
@@ -48,7 +48,7 @@ namespace belt.Controllers
                     HttpContext.Session.SetInt32("Id", (int)User.id);
                     return RedirectToAction("dashboard");            
                 }else{
-                    return View("index");
+                    return View("Index");
                 }
             }
 
@@ -58,7 +58,7 @@ namespace belt.Controllers
                 if(ModelState.IsValid){
                     if(user == null){
                         ModelState.AddModelError("login_Email", "Not a valid email or password");
-                        return View("index");
+                        return View("Index");
                     }
                     else if(user != null && User.login_Password != null)
                         {
@@ -69,11 +69,11 @@ namespace belt.Controllers
                                 return RedirectToAction("dashboard");
                             }else{
                                 ModelState.AddModelError("login_Password", "Not a valid email or password");
-                                return View("index");
+                                return View("Index");
                             }
                     }                 
                 }
-                return View("index");
+                return View("Index");
             }
             
             [HttpGet("dashboard")]
