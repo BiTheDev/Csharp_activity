@@ -46,7 +46,7 @@ namespace belt.Controllers
                     _context.Add(User);
                     _context.SaveChanges();
                     HttpContext.Session.SetInt32("Id", (int)User.id);
-                    return RedirectToAction("Dashboard");            
+                    return RedirectToAction("dashboard");            
                 }else{
                     return View("index");
                 }
@@ -66,7 +66,7 @@ namespace belt.Controllers
                             if( 0 !=Hasher.VerifyHashedPassword(user, user.password, User.login_Password)){
                                 HttpContext.Session.SetInt32("Id", (int)user.id);
                                 int? id = HttpContext.Session.GetInt32("Id");
-                                return RedirectToAction("Dashboard");
+                                return RedirectToAction("dashboard");
                             }else{
                                 ModelState.AddModelError("login_Password", "Not a valid email or password");
                                 return View("index");
@@ -107,13 +107,13 @@ namespace belt.Controllers
                                         ViewBag.error = "time conflict";
                                         ViewBag.allactivity = allactivity;
                                         ViewBag.user = user;
-                                        return View("Dashboard");
+                                        return View("dashboard");
                                     }else if(checking.timetype == "Minutes"){
                                         if ((checking.time.TotalMinutes + checking.duration) >= (current.time.TotalMinutes) && participant.usersid == user.id){
                                         ViewBag.error = "time conflicts";
                                         ViewBag.allactivity = allactivity;
                                         ViewBag.user = user;
-                                        return View("Dashboard");
+                                        return View("dashboard");
                                         }
                                     }
                                     }
@@ -122,14 +122,14 @@ namespace belt.Controllers
                                     ViewBag.error = "date conflicts";
                                         ViewBag.allactivity = allactivity;
                                         ViewBag.user = user;
-                                        return View("Dashboard");
+                                        return View("dashboard");
                                 }
                         if(checking.timetype == "Days"){
                             if((checking.date.DayOfYear + checking.duration) >= (current.date.DayOfYear) && participant.usersid == user.id){
                             ViewBag.error = "date conflicts";
                             ViewBag.allactivity = allactivity;
                             ViewBag.user = user;
-                            return View("Dashboard");
+                            return View("dashboard");
                         }
                     }
                 }
@@ -140,7 +140,7 @@ namespace belt.Controllers
                 };
                 _context.Add(guest);
                 _context.SaveChanges();
-                return RedirectToAction("Dashboard");
+                return RedirectToAction("dashboard");
             }
             [HttpPost("delete")]
             public IActionResult Delete(int activityid){
@@ -231,6 +231,10 @@ namespace belt.Controllers
                 HttpContext.Session.Clear();
                 return RedirectToAction("Index");
             }
+             public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
 
     }
 }

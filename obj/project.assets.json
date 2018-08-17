@@ -12788,11 +12788,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/belt.csproj",
+      "projectUniqueName": "/Users/Curry30/Desktop/belt/belt.csproj",
       "projectName": "belt",
-      "projectPath": "/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/belt.csproj",
+      "projectPath": "/Users/Curry30/Desktop/belt/belt.csproj",
       "packagesPath": "/Users/Curry30/.nuget/packages/",
-      "outputPath": "/Users/Curry30/Desktop/coding_dojo/C#.Net/BeltExam/belt/obj/",
+      "outputPath": "/Users/Curry30/Desktop/belt/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
